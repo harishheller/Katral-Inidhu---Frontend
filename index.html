@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>கற்றல் இனிது - Login Page</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="background">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="assets/logo.jpg" alt="Logo" class="logo"/>
+            <span class="navbar-title">கற்றல் இனிது</span>
+        </div>    
+      <div class="nav-buttons">
+        <button onclick="navigateHome()">Home</button>
+        <button onclick="toggleForm('signup')">Signup</button>
+      </div>
+    </nav>
+
+    <div class="glass-container">
+      <div class="form-toggle">
+        <button onclick="toggleForm('login')">Login</button>
+        <button onclick="toggleForm('signup')">Signup</button>
+      </div>
+      <div id="login-form" class="form">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email"/>
+        <input type="password" placeholder="Password"/>
+        <button>Login</button>
+        <a href="http://localhost:5000/auth/google" class="google-btn">
+            <img src="assets/google-icon.svg" alt="Google Icon" width="20" style="vertical-align: middle; margin-right: 10px;">
+            Continue with Google
+        </a>          
+      </div>
+      <div id="signup-form" class="form hidden">
+        <h2>Signup</h2>
+        <input type="text" placeholder="Full Name"/>
+        <input type="email" placeholder="Email"/>
+        <input type="password" placeholder="Password"/>
+        <button>Signup</button>
+        <a href="http://localhost:5000/auth/google" class="google-btn">
+            <img src="assets/google-icon.svg" alt="Google Icon" width="20" style="vertical-align: middle; margin-right: 10px;">
+            Signup with Google
+        </a>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>

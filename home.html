@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>கற்றல் இனிது - Home</title>
+  <!-- Link to the NEW CSS file for the home page -->
+  <link rel="stylesheet" href="home.css"/>
+  <!-- Link to the SAME JavaScript file -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="background">
+    <!-- Re-use the same navbar structure -->
+    <nav class="navbar">
+      <img src="assets/logo.jpg" alt="Logo" class="logo"/>
+      <div class="nav-buttons">
+        <!-- Home button is already here, no action needed on this page -->
+        <button onclick="navigateHome()">Home</button>
+        <!-- These buttons navigate back to the index/login page -->
+        <button onclick="navigateToLogin()">Login</button>
+        <button onclick="navigateToSignup()">Signup</button>
+      </div>
+    </nav>
+
+    <!-- Container for the standard cards -->
+    <div class="cards-container">
+      <h2>Choose Your Standard</h2>
+      <div class="cards-grid">
+        <!-- Standard Cards - Add onclick later when functionality is defined -->
+        <div class="standard-card" onclick="selectStandard(6)">
+          <span>6th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(7)">
+          <span>7th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(8)">
+          <span>8th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(9)">
+          <span>9th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(10)">
+          <span>10th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(11)">
+          <span>11th Standard</span>
+        </div>
+        <div class="standard-card" onclick="selectStandard(12)">
+          <span>12th Standard</span>
+        </div>
+         <!-- Add more cards if needed -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

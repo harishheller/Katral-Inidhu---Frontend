@@ -1,0 +1,151 @@
+/* Import basic styles (optional, but keeps things DRY if you have more base styles) */
+/* @import url('style.css'); */ /* Or copy relevant base styles */
+
+/* --- Copied/Adapted from style.css for consistency --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100%;
+    background: url('assets/background.jpeg') no-repeat center center/cover;
+    color: #fff; /* Default text color for the home page */
+}
+
+.background {
+    min-height: 100vh; /* Use min-height to ensure it covers viewport */
+    width: 100%;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Add padding to prevent content from going under fixed navbar */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    position: fixed; /* Make navbar fixed */
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.logo {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-buttons button {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+}
+
+/* --- New Styles for Home Page Content --- */
+
+.cards-container {
+    margin-top: 40px; /* Space below navbar */
+    padding: 2rem;
+    width: 80%;
+    max-width: 1000px; /* Max width for larger screens */
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Optional extra blur */
+    text-align: center;
+}
+
+.cards-container h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.cards-grid {
+    display: grid;
+    /* Adjust columns for different screen sizes */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px; /* Space between cards */
+    justify-content: center;
+}
+
+.standard-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Minimum height */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+
+.standard-card span {
+    display: block; /* Ensure span takes up width if needed */
+}
+
+/* --- Hover Effects --- */
+.standard-card:hover {
+    transform: translateY(-8px) scale(1.03); /* Lift and slightly enlarge */
+    background: linear-gradient(145deg, rgba(0, 255, 255, 0.3), rgba(0, 191, 255, 0.2)); /* Cyan/Deep Sky Blue tint */
+    /* Vibrant Neon Shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(0, 255, 255, 0.6),  /* Cyan glow */
+                0 0 25px rgba(0, 191, 255, 0.4);  /* Deep Sky Blue glow */
+    border: 1px solid rgba(0, 255, 255, 0.7); /* Cyan border */
+}
+
+/* Optional: Active/Click effect */
+.standard-card:active {
+    transform: translateY(-2px) scale(1.01); /* Smaller lift */
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
+                0 0 10px rgba(0, 255, 255, 0.4),
+                0 0 15px rgba(0, 191, 255, 0.3);
+}
+
+/* Media query for smaller screens if needed */
+@media (max-width: 600px) {
+    .cards-container {
+        width: 90%;
+        padding: 1rem;
+    }
+    .cards-grid {
+         /* Make cards stack vertically or have fewer columns */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .standard-card {
+        padding: 1.5rem 0.5rem;
+        font-size: 1rem;
+    }
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+    .nav-buttons button {
+        padding: 0.4rem 0.8rem;
+        margin-left: 5px;
+    }
+}
